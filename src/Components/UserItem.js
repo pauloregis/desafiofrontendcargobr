@@ -20,7 +20,7 @@ class UserItem extends Component {
           <div className="user_item__avatar">
             <img src={this.props.member.avatar_url} alt=""/>
           </div>
-          <div className="user_item__username">{this.props.member.name}</div>
+          <div className="user_item__username">{this.props.member.login}</div>
         </div>
         <div className="user_item__box2">
           <div className="user_item__more_info">

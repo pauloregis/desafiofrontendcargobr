@@ -56,6 +56,7 @@ class App extends Component {
           total: 1,
           page: 1
         },
+        organizationMembers: null,
         errorMessage: false
       });
       ajax().get(this.getGithubApiUrl(organization, page))
@@ -150,7 +151,7 @@ class App extends Component {
         </div>
         <div className="content">
           <Search handleSearch={(e) => this.handleSearch(e)}/>
-          {!!this.state.organizationMembers &&
+          {(!!this.state.organizationMembers && !this.state.errorMessage) &&
             <div>
               <p className="help_info"><i className="ion-ios-help"></i><span>Selecione os membros que você deseja adquirir</span></p>
               <UserList
