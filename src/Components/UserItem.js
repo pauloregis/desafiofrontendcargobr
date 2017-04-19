@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class UserItem extends Component {
   render() {
     const { public_repos,followers, following  } = this.props.member;

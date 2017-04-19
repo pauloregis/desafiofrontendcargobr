@@ -113,8 +113,8 @@
   margin-bottom: 20px;
   position: relative;
   padding: 10px 15px;
-  justify-content: space-between;
   cursor: pointer;
+  justify-content: space-between;
   transition: all .3s ease-in-out;
 }
 

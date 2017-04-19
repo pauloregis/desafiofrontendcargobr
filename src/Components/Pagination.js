@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react'
-import pagination from './../utils/pagination'
-import Page from './Page'
+import React from 'react';
+import PropTypes from 'prop-types';
+import pagination from './../utils/pagination';
+import Page from './Page';
 
 const Pagination = ({ total, activePage, pageLink, onClick }) => (
   <ul className='pagination'>
