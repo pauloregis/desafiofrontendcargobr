@@ -18,7 +18,8 @@ class App extends Component {
         page: 1
       },
       organization: '',
-      totalPrice: 0
+      totalPrice: 0,
+      errorMessage: false
     };
 
     this.perPage = 6;
@@ -54,7 +55,8 @@ class App extends Component {
         pagination: {
           total: 1,
           page: 1
-        }
+        },
+        errorMessage: false
       });
       ajax().get(this.getGithubApiUrl(organization, page))
         .then((result, xhr) => {
@@ -70,6 +72,11 @@ class App extends Component {
             organization: organization
           });
           this.getMembers(result);
+        })
+        .catch(() => {
+          this.setState({
+            errorMessage: true
+          });
         })
         .always(() => {
           this.setState({
@@ -157,11 +164,18 @@ class App extends Component {
             </div>
           }
 
-          {!this.state.organizationMembers &&
+          {(!this.state.organizationMembers && !this.state.errorMessage)  &&
             <div className="help">
               <i className="ion-ios-help-outline"></i>
               <p>Para iniciar as compras, você precisa buscar por alguma organização presente no Github.</p>
             </div>
+          }
+
+          {!!this.state.errorMessage &&
+          <div className="help">
+            <i className="ion-close-circled"></i>
+            <p>Ops aconteceu algum erro! Por favor, verifique se o nome da organização é válido!</p>
+          </div>
           }
 
           {!!this.state.itemsSelected.length &&
