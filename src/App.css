@@ -1,0 +1,314 @@
+@import url(//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+.App {
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.App-header {
+  background: linear-gradient(90deg,#900096,#340099);
+  height: 40px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-header h2 {
+  margin: 0;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.content {
+  max-width: 840px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+
+.search input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  font-size: 24px;
+  border-radius: 4px;
+  border: 1px solid #d0d8db;
+  position: relative;
+  background: transparent;
+}
+
+.search:before {
+  content: "\F2F5";
+  display: inline-block;
+  font-family: Ionicons;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 28px;
+  font-size: 28px;
+  left: 15px;
+}
+
+.help {
+  text-align: center;
+  max-width: 360px;
+  width: 100%;
+  font-size: 14px;
+  margin: 40px auto 0 auto;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.8;
+}
+
+.help p {
+  margin-top: 0;
+}
+
+.help i {
+  font-size: 240px;
+  line-height: 1;
+  color: rgba(0,0,0,0.25);
+}
+
+.help_info {
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(0,0,0,0.55);
+  display: flex;
+  margin-bottom: 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.help_info i {
+  font-size: 24px;
+  margin-right: 5px;
+  color: rgba(0,0,0,0.25);
+}
+
+.user_list {
+  width: 100%;
+  padding-left: 0;
+  position: relative;
+}
+
+.user_item {
+  display: flex;
+  background: white;
+  box-shadow: 0 1px 2px rgba(43,59,93,.29);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 10px 15px;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.user_item:hover {
+  box-shadow: 0 1px 2px rgba(43,59,93,.29), 0 0 13px rgba(43,59,93,.29);
+  transition: all .3s ease-in-out;
+}
+
+.user_item__checkbox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 20px;
+  left: -40px;
+  display: flex;
+  align-items: center;
+}
+
+.user_item__avatar img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.user_item__username {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.user_item__box1, .user_item__box2 {
+  display: flex;
+  align-items: center;
+}
+
+.user_item__more_info ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.user_item__more_info li {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user_item__more_info__label, .user_item__more_info__label_price {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.55);
+}
+
+.user_item__more_info .user_item__more_info__value_price {
+  color: #00a553;
+}
+
+.user_item__more_info__value, .user_item__more_info__value_price {
+  font-size: 20px;
+  margin-top: 10px;
+  color: rgba(0,0,0,0.75);
+}
+
+.user_item__more_info .user_item__price {
+  margin-left: 50px;
+}
+
+.pagination {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.pagination-item.active .pagination-link {
+  background: #900096;
+  color: white;
+}
+.pagination-link {
+  background: white;
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(43,59,93,.29);
+  float: left;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.selected_items {
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 -1px 0 rgba(76,86,103,.2), 0 -2px 35px rgba(31,37,50,.14);
+  z-index: 1000;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  padding: 23px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.selected_item__count {
+  color: #090b2e;
+  display: flex;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex-direction: column;
+}
+.selected_item__count span {
+  margin-right: 5px;
+}
+
+
+.selected_items__avatar img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.selected_items__action span {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.selected_items__action span strong {
+  font-weight: 700;
+  color: #00a553;
+}
+
+.selected_items__action button {
+  background: #00a553;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px 15px;
+  border: 0;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.checkbox {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  margin: 20px auto;
+  border-radius: 50px;
+  border: 1px solid #bbb;
+}
+.checkbox label {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  border-radius: 50px;
+}
+.checkbox label:after {
+  content: '';
+  width: 9px;
+  height: 5px;
+  position: absolute;
+  top: 9px;
+  left: 8px;
+  border: 2px solid white;
+  border-top: none;
+  border-right: none;
+  background: transparent;
+  opacity: 0;
+  transform: rotate(-45deg);
+}
+.checkbox label:hover::after {
+  opacity: 0.3;
+}
+
+
+.checkbox input[type=checkbox] {
+  visibility: hidden;
+}
+
+.checkbox input[type=checkbox]:checked + label {
+  background: #00a553;
+}
+
+.checkbox input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
