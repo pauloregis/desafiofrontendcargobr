@@ -1,34 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import UserItem from './UserItem';
 import Pagination from './Pagination';
 
-class UserList extends Component {
+const UserList = ({ members, changeMembersSelected, hasMemberInSelected, pagination, handlePagination }) => (
+  <div>
+    <p className="help_info"><i className="ion-ios-help"></i><span>Selecione os membros que você deseja adquirir</span></p>
+    <ul className="user_list">
+      {
+        members.map((member, index) => {
+          const isChecked = hasMemberInSelected( member );
 
-  toggle(member) {
-    this.props.usersSelectedChange(member);
-  }
+          return (
+            <UserItem
+              member={member}
+              key={index}
+              onToggle={changeMembersSelected}
+              isChecked={isChecked}
+            />
+          );
+        })
+      }
+    </ul>
 
-  hasMemberInSelected(member) {
-    return this.props.hasMemberInSelected(member);
-  }
-
-  render() {
-    return (
-      <div>
-        <ul className="user_list">
-          {
-            this.props.members.map(( member, index ) => (
-              <UserItem member={member} key={index} onToggle={this.toggle.bind(this, member)} isChecked={this.hasMemberInSelected(member)}/>
-            ))
-          }
-        </ul>
-        {this.props.total > 1 &&
-          <Pagination total={this.props.total} activePage={this.props.page} onClick={this.props.handlePagination} />
-        }
-      </div>
-    );
-  }
-}
+    {pagination.total > 1 &&
+      <Pagination total={pagination.total} activePage={pagination.page} onClick={handlePagination}/>
+    }
+  </div>
+);
 
 export default UserList;
